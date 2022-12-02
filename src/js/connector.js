@@ -10,7 +10,7 @@ window.TrelloPowerUp.initialize({
                 return [
                     {
                         text: card.idShort,
-                    },  
+                    },
                 ];
             })
             .catch((e) => {
@@ -18,3 +18,4 @@ window.TrelloPowerUp.initialize({
             });
     },
 });
+console.log(true);
