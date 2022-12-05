@@ -1,6 +1,7 @@
 window.TrelloPowerUp.initialize({
     "card-badges": function (t, opts) {
-        console.log(t);
-        return [];
+        return t.card("all").then((card) => {
+            console.log(card);
+        });
     },
 });
