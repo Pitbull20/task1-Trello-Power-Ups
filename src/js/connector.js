@@ -1,8 +1,12 @@
 window.TrelloPowerUp.initialize({
-    "board-buttons": function (t, opts) {
-        return t.board("all").then((board) => {
-            console.log(board);
-            return [];
+    "card-badges": function (t, opts) {
+        return t.card("all").then((card) => {
+            console.log(card);
+            return [
+                {
+                    idShort: 1,
+                },
+            ];
         });
     },
 });
