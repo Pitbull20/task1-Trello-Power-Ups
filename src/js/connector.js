@@ -5,6 +5,7 @@ window.TrelloPowerUp.initialize({
             return [
                 {
                     idShort: 1,
+                    name: "Не тест!",
                 },
             ];
         });
