@@ -1,8 +1,7 @@
-console.log("Hello world");
-
-window.TrelloPowerUp.initialize({
-    "card-buttons": function (t, opts) {
-        console.log(true);
-        return [];
-    },
+TrelloPowerUp.initialize({
+    'current-board': function(t, options){
+    t.board('id')
+        .then(function (name) {
+            console.log(name);
+    });
 });
