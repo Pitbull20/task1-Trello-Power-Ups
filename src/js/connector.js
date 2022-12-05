@@ -1,7 +1,6 @@
-TrelloPowerUp.initialize({
-    'current-board': function(t, options){
-    t.board('id')
-        .then(function (name) {
-            console.log(name);
-    });
+window.TrelloPowerUp.initialize({
+    "card-badges": function (t, opts) {
+        console.log(t);
+        return [];
+    },
 });
