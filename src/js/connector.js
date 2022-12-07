@@ -4,20 +4,15 @@ window.TrelloPowerUp.initialize({
             console.log(card);
             if (card.coordinates) {
                 const { latitude, longitude } = card.coordinates;
-                const APP_ID = "28c85c86a948ee6429cc6013996d70ac";
                 fetch(
-                    `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${APP_ID}`
+                    `http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Ternopil&aqi=no`
                 )
                     .then((response) => {
                         return response.json();
                     })
                     .then((weatherData) => {
                         console.log(weatherData);
-                        return [
-                            {
-                                text: weatherData.wind.speed.toString(),
-                            },
-                        ];
+                        return [];
                     })
                     .catch((e) => {
                         console.log(e);
