@@ -24,6 +24,9 @@ window.TrelloPowerUp.initialize({
                                     weatherData.hourly.windspeed_10m[0].toString() +
                                     weatherData.hourly_units.windspeed_10m.toString(),
                             },
+                            {
+                                icon: null,
+                            },
                         ];
                     })
                     .catch((e) => {
