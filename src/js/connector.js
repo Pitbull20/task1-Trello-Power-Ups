@@ -15,10 +15,12 @@ window.TrelloPowerUp.initialize({
                             {
                                 text:
                                     weatherData.hourly.temperature_2m[0].toString() +
-                                    "°C",
+                                    weatherData.hourly_units.temperature_2m.toString(),
                             },
                             {
-                                text: weatherData,
+                                text:
+                                    weatherData.hourly.windspeed_10m[0].toString() +
+                                    weatherData.hourly_units.windspeed_10m.toString(),
                             },
                         ];
                     })
