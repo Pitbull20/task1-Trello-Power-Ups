@@ -60,7 +60,7 @@ function getWetherBadges(t) {
                                     "🌡 " +
                                     weatherData.hourly.temperature_2m[0].toString() +
                                     weatherData.hourly_units.temperature_2m.toString(),
-                                refresh: 10,
+                                refresh: 100,
                             };
                         })
                         .catch((e) => {
@@ -78,7 +78,7 @@ function getWetherBadges(t) {
                                 "💨 " +
                                 weatherData.hourly.windspeed_10m[0].toString() +
                                 weatherData.hourly_units.windspeed_10m.toString(),
-                            refresh: 10,
+                            refresh: 100,
                         };
                     });
                 },
