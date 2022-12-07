@@ -13,7 +13,13 @@ window.TrelloPowerUp.initialize({
                     })
                     .then((weatherData) => {
                         console.log(weatherData);
-                        return [];
+                        return [
+                            {
+                                text:
+                                    weatherData.horly.temperature_2m[0][0] +
+                                    "°C",
+                            },
+                        ];
                     })
                     .catch((e) => {
                         console.log(false);
