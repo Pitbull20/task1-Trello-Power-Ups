@@ -37,7 +37,8 @@ function getBadgesForWeatherData(weatherData) {
             text:
                 "💨 " +
                 weatherData.hourly.windspeed_10m[0].toString() +
-                weatherData.hourly_units.windspeed_10m.toString(),
+                weatherData.hourly_units.windspeed_10m.toString() +
+                "\n",
         },
     ];
 }
