@@ -1183,6 +1183,13 @@ ordered-binary@^1.2.4:
   resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.4.0.tgz#6bb53d44925f3b8afc33d1eed0fa15693b211389"
   integrity sha512-EHQ/jk4/a9hLupIKxTfUsQRej1Yd/0QLQs3vGvIqg5ZtCYSzNhkzHoZc7Zf4e4kUlDaC3Uw8Q/1opOLNN2OKRQ==
 
+parcel-plugin-interpolate-env@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-interpolate-env/-/parcel-plugin-interpolate-env-0.0.1.tgz#e23e71cabd2491c02a73216ee21e7a14b0430fda"
+  integrity sha512-lFvn5LiUeHIEL+M3kph2NpLrwEIGvGIYsugpKomp2W8H8zPTx7bVH8n+4lj26FrjL0R72t2+a4DbJfcrolUhvg==
+  dependencies:
+    escape-string-regexp "^1.0.5"
+
 parcel@^2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/parcel/-/parcel-2.8.0.tgz#93461bb6c42c9b8979a933dec17626e6bc3b5eb9"
