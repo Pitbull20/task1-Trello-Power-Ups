@@ -55,7 +55,7 @@ window.TrelloPowerUp.initialize({
                                     weatherData.hourly_units.temperature_2m.toString(),
                             },
                             {
-                                title: "Wind",
+                                title: "Wind Speed",
                                 text:
                                     "💨 " +
                                     weatherData.hourly.windspeed_10m[0].toString() +
