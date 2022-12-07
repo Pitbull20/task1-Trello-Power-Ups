@@ -24,8 +24,8 @@ window.TrelloPowerUp.initialize({
                 //     });
                 return [
                     {
-                        text: "100",
-                        text: "1500"
+                        text: latitude.toString(),
+                        text: longitude.toString(),
                     },
                 ];
             }
