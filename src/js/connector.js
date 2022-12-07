@@ -13,6 +13,7 @@ window.TrelloPowerUp.initialize({
                         console.log(weatherData);
                         return [
                             {
+                                icon: "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/samsung/349/thermometer_1f321-fe0f.png",
                                 text:
                                     weatherData.hourly.temperature_2m[0].toString() +
                                     weatherData.hourly_units.temperature_2m.toString(),
