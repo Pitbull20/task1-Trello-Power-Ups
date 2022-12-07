@@ -4,9 +4,9 @@ window.TrelloPowerUp.initialize({
             console.log(card);
             if (card.coordinates) {
                 const { latitude, longitude } = card.coordinates;
-                console.log("%%API_KEY%%");
+                console.log(`%%API_KEY%%`);
                 fetch(
-                    "http://api.weatherapi.com/v1/current.json?key=%%API_KEY%%&q=London&aqi=no"
+                    `http://api.weatherapi.com/v1/current.json?key=%%API_KEY%%&q=London&aqi=no`
                 )
                     .then((response) => {
                         return response.json();
