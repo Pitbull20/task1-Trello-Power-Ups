@@ -1,6 +1,5 @@
 window.TrelloPowerUp.initialize({
     "card-badges": function (t, opts) {
-        console.log("------------------------------");
         return t.card("coordinates").then((card) => {
             console.log(card);
             if (card.coordinates) {
@@ -20,6 +19,9 @@ window.TrelloPowerUp.initialize({
                                 text: weatherData.wind.speed.toString(),
                             },
                         ];
+                    })
+                    .catch((e) => {
+                        console.log(e);
                     });
             }
             return [];
