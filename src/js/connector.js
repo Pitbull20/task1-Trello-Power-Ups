@@ -10,13 +10,17 @@ window.TrelloPowerUp.initialize({
                         return response.json();
                     })
                     .then((weatherData) => {
-                        console.log(weatherData.hourly.temperature_2m[0]);
+                        console.log(weatherData);
                         return [
                             {
+                                icon: "../image/temperature.png",
                                 text:
                                     weatherData.hourly.temperature_2m[0].toString() +
                                     "°C",
                             },
+                            // {
+                            //     text:
+                            // }
                         ];
                     })
                     .catch((e) => {
