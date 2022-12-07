@@ -13,19 +13,14 @@ window.TrelloPowerUp.initialize({
                         console.log(weatherData);
                         return [
                             {
-                                icon: null
-                            },
-                            {
-                                icon: null,
                                 text:
-                                    "🌡" +
+                                    "🌡 " +
                                     weatherData.hourly.temperature_2m[0].toString() +
                                     weatherData.hourly_units.temperature_2m.toString(),
                             },
                             {
-                                icon: null,
                                 text:
-                                    "💨" +
+                                    "💨 " +
                                     weatherData.hourly.windspeed_10m[0].toString() +
                                     weatherData.hourly_units.windspeed_10m.toString(),
                             },
