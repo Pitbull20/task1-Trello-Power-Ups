@@ -13,6 +13,7 @@ window.TrelloPowerUp.initialize({
                         return response.json();
                     })
                     .then((weatherData) => {
+                        console.log(weatherData);
                         return [
                             {
                                 text: weatherData.main.temp.toString(),
