@@ -1,6 +1,5 @@
 const Promise = window.TrelloPowerUp.Promise;
 
-console.log("work");
 function fetchWeatherData(t) {
     return Promise.all([t.card("coordinates"), t.get("card", "shared")]).spread(
         (card, cache) => {
@@ -49,11 +48,11 @@ function getWetherBadges(t) {
         if (!card.coordinates) {
             return [];
         }
-        console.log("WORD");
         return [
             {
                 dynamic: (t) => {
                     return fetchWeatherData(t).then((weatherData) => {
+                        console.log("WORD");
                         return {
                             title: "Temperature",
                             text:
@@ -67,6 +66,7 @@ function getWetherBadges(t) {
             },
             {
                 dynamic: (t) => {
+                    console.log("work");
                     return fetchWeatherData(t).then((weatherData) => {
                         return {
                             title: "Wind Speed",
