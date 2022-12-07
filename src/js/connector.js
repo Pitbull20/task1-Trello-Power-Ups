@@ -5,7 +5,7 @@ window.TrelloPowerUp.initialize({
             if (card.coordinates) {
                 return [
                     {
-                        text: card.coordinates.latitude,
+                        text: card.coordinates.latitude.toString(),
                     },
                 ];
             } else {
