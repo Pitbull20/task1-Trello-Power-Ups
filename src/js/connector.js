@@ -1,7 +1,24 @@
+const Promise = window.TrelloPowerUp.Promise;
+
 function fetchWeatherData(t) {
-    return t.card("coordinates").then((card) => {
-        if (card.coordinates) {
+    return Promise.all([t.card("coordinates"), t.get("card", "shared")]).spread(
+        (card, cache) => {
+            if (!card.coordinates) {
+                return 0;
+            }
             const { latitude, longitude } = card.coordinates;
+            const location = `${latitude}:${longitude}`;
+
+            if (
+                !cache &&
+                cache.location === location &&
+                cache.expires >= Date.now() &&
+                cache.weatherData
+            ) {
+                console.log("Cash Hit!");
+                return cache.weatherData;
+            }
+            console.log("Cash Miss!", location);
             return fetch(
                 `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,windspeed_10m`
             )
@@ -9,6 +26,13 @@ function fetchWeatherData(t) {
                     return response.json();
                 })
                 .then((weatherData) => {
+                    if (t.memberCanWriteToModel("card")) {
+                        t.set("card", "shared", {
+                            location: location,
+                            expires: Date.now() + 1000 * 60 * 30,
+                            weatherData,
+                        });
+                    }
                     return weatherData;
                 })
                 .catch((e) => {
@@ -16,8 +40,7 @@ function fetchWeatherData(t) {
                     console.log(e);
                 });
         }
-        return null;
-    });
+    );
 }
 
 function getBadgesForWeatherData(weatherData) {
@@ -37,8 +60,7 @@ function getBadgesForWeatherData(weatherData) {
             text:
                 "💨 " +
                 weatherData.hourly.windspeed_10m[0].toString() +
-                weatherData.hourly_units.windspeed_10m.toString() +
-                "\n",
+                weatherData.hourly_units.windspeed_10m.toString(),
         },
     ];
 }
