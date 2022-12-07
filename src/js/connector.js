@@ -24,6 +24,7 @@ window.TrelloPowerUp.initialize({
                 //     });
                 return [
                     {
+                        icon: "../image/219243-200.png",
                         text: latitude.toString(),
                     },
                     {
