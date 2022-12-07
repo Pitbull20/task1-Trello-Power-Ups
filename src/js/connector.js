@@ -53,14 +53,7 @@ function getWetherBadges(t) {
                 dynamic: (t) => {
                     return fetchWeatherData(t).then((weatherData) => {
                         console.log("WORD");
-                        return {
-                            title: "Temperature",
-                            text:
-                                "🌡 " +
-                                weatherData.hourly.temperature_2m[0].toString() +
-                                weatherData.hourly_units.temperature_2m.toString(),
-                            refresh: 10,
-                        };
+                        
                     });
                 },
             },
