@@ -54,6 +54,7 @@ function getBadgesForWeatherData(weatherData) {
                 "🌡 " +
                 weatherData.hourly.temperature_2m[0].toString() +
                 weatherData.hourly_units.temperature_2m.toString(),
+            refresh: 10,
         },
         {
             title: "Wind Speed",
@@ -61,6 +62,7 @@ function getBadgesForWeatherData(weatherData) {
                 "💨 " +
                 weatherData.hourly.windspeed_10m[0].toString() +
                 weatherData.hourly_units.windspeed_10m.toString(),
+            refresh: 10,
         },
     ];
 }
