@@ -4,7 +4,7 @@ function fetchWeatherData(t) {
     return Promise.all([t.card("coordinates"), t.get("card", "shared")]).spread(
         (card, cache) => {
             if (!card.coordinates) {
-                return 0;
+                return null;
             }
             const { latitude, longitude } = card.coordinates;
             const location = `${latitude}:${longitude}`;
@@ -52,32 +52,28 @@ function getWetherBadges(t) {
             {
                 dynamic: (t) => {
                     return fetchWeatherData(t).then((weatherData) => {
-                        return [
-                            {
-                                title: "Temperature",
-                                text:
-                                    "🌡 " +
-                                    weatherData.hourly.temperature_2m[0].toString() +
-                                    weatherData.hourly_units.temperature_2m.toString(),
-                                refresh: 30 * 60,
-                            },
-                        ];
+                        return {
+                            title: "Temperature",
+                            text:
+                                "🌡 " +
+                                weatherData.hourly.temperature_2m[0].toString() +
+                                weatherData.hourly_units.temperature_2m.toString(),
+                            refresh: 10,
+                        };
                     });
                 },
             },
             {
                 dynamic: (t) => {
                     return fetchWeatherData(t).then((weatherData) => {
-                        return [
-                            {
-                                title: "Wind Speed",
-                                text:
-                                    "💨 " +
-                                    weatherData.hourly.windspeed_10m[0].toString() +
-                                    weatherData.hourly_units.windspeed_10m.toString(),
-                                refresh: 30 * 60,
-                            },
-                        ];
+                        return {
+                            title: "Wind Speed",
+                            text:
+                                "💨 " +
+                                weatherData.hourly.windspeed_10m[0].toString() +
+                                weatherData.hourly_units.windspeed_10m.toString(),
+                            refresh: 10,
+                        };
                     });
                 },
             },
