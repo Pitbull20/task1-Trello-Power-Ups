@@ -3,7 +3,7 @@ window.TrelloPowerUp.initialize({
         return t.card("coordinates").then((card) => {
             if (card.coordinates) {
                 const { latitude, longitude } = card.coordinates;
-                fetch(
+                return fetch(
                     `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
                 )
                     .then((response) => {
