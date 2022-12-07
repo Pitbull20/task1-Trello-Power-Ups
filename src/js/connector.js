@@ -6,7 +6,7 @@ window.TrelloPowerUp.initialize({
                 const { latitude, longitude } = card.coordinates;
                 console.log(`%%API_KEY%%`);
                 fetch(
-                    "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m"
+                    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m`
                 )
                     .then((response) => {
                         return response.json();
