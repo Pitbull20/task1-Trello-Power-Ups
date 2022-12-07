@@ -14,7 +14,8 @@ window.TrelloPowerUp.initialize({
                         return [
                             {
                                 text:
-                                    weatherData.hourly.temperature_2m[0] + "°C",
+                                    weatherData.hourly.temperature_2m[0].toString() +
+                                    "°C",
                             },
                         ];
                     })
