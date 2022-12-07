@@ -25,6 +25,8 @@ window.TrelloPowerUp.initialize({
                 return [
                     {
                         text: latitude.toString(),
+                    },
+                    {
                         text: longitude.toString(),
                     },
                 ];
