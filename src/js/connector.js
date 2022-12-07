@@ -44,32 +44,27 @@ function fetchWeatherData(t) {
 }
 
 function getWetherBadges(t) {
-    t.card("coordinates").then((card) => {
+    t.card("coordinates").then(function (card) {
         if (!card.coordinates) {
             return [];
         }
         return [
             {
-                dynamic: (t) => {
-                    return fetchWeatherData(t)
-                        .then((weatherData) => {
-                            console.log("WORD");
-                            return {
-                                title: "Temperature",
-                                text:
-                                    "🌡 " +
-                                    weatherData.hourly.temperature_2m[0].toString() +
-                                    weatherData.hourly_units.temperature_2m.toString(),
-                                refresh: 100,
-                            };
-                        })
-                        .catch((e) => {
-                            console.log(e);
-                        });
+                dynamic: function (t) {
+                    return fetchWeatherData(t).then((weatherData) => {
+                        return {
+                            title: "Temperature",
+                            text:
+                                "🌡 " +
+                                weatherData.hourly.temperature_2m[0].toString() +
+                                weatherData.hourly_units.temperature_2m.toString(),
+                            refresh: 100,
+                        };
+                    });
                 },
             },
             {
-                dynamic: (t) => {
+                dynamic: function (t) {
                     console.log("work");
                     return fetchWeatherData(t).then((weatherData) => {
                         return {
@@ -91,7 +86,7 @@ window.TrelloPowerUp.initialize({
     "card-badges": function (t) {
         return getWetherBadges(t);
     },
-    "card-detail-badges": (t) => {
+    "card-detail-badges": function (t) {
         return getWetherBadges(t);
     },
 });
