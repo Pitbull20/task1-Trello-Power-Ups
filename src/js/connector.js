@@ -15,7 +15,6 @@ window.TrelloPowerUp.initialize({
                         console.log(weatherData);
                         return [
                             {
-                                text: weatherData.main.temp.toString(),
                                 text: weatherData.wind.speed.toString(),
                             },
                         ];
