@@ -15,10 +15,8 @@ function fetchWeatherData(t) {
                 cache.expires >= Date.now() &&
                 cache.weatherData
             ) {
-                console.log("Cash Hit!");
                 return cache.weatherData;
             }
-            console.log("Cash Miss!");
             return fetch(
                 `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,windspeed_10m`
             )
@@ -34,10 +32,6 @@ function fetchWeatherData(t) {
                         });
                     }
                     return weatherData;
-                })
-                .catch((e) => {
-                    console.log(false);
-                    console.log(e);
                 });
         }
     );
@@ -76,6 +70,12 @@ window.TrelloPowerUp.initialize({
         return fetchWeatherData(t).then((weatherData) => {
             const badges = getBadgesForWeatherData(weatherData);
             return badges;
+        });
+    },
+    "show-settings": (t) => {
+        return t.popup({
+            title: "Weather settings",
+            url: "./settings.html",
         });
     },
 });
