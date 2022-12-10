@@ -1,4 +1,4 @@
-const t = window.TrelloPowerUp.iFrame();
+const t = window.TrelloPowerUp.iframe();
 
 const defaultUnit = (locale) => {
     if (locale === "en-US") {
